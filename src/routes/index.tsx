@@ -38,6 +38,7 @@ function Index() {
     const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
     const header = document.getElementById("header");
     const dock = document.getElementById("dock");
+    const pill = document.getElementById("dockPill");
     const dockLinks = [...document.querySelectorAll<HTMLAnchorElement>(".dock-link")];
     const reveals = [...document.querySelectorAll(".reveal")];
     const io = new IntersectionObserver(
@@ -66,12 +67,6 @@ function Index() {
       const y = window.scrollY;
       header?.classList.toggle("stuck", y > 24);
 
-      if (dock) {
-        const goingDown = y > lastY + 6;
-        const goingUp = y < lastY - 6;
-        if (goingDown && y > 260) dock.classList.add("hidden");
-        else if (goingUp) dock.classList.remove("hidden");
-      }
       lastY = y;
 
       let activeIndex = 0;
@@ -79,6 +74,7 @@ function Index() {
         if (sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.35) activeIndex = i;
       });
       dockLinks.forEach((l, i) => l.classList.toggle("is-active", i === activeIndex));
+      movePill(dockLinks[activeIndex]);
 
       heroImg?.style.setProperty("--heroY", `${clamp(y * 0.1, 0, 55)}px`);
       courseImgs.forEach((img) => {
@@ -115,11 +111,18 @@ function Index() {
     addEventListener("scroll", handler, { passive: true });
     onScroll();
 
-    const tap = () => dock?.classList.remove("hidden");
+    const tap = (e: Event) => {
+      const el = e.currentTarget as HTMLElement;
+      dockLinks.forEach((l) => l.classList.toggle("is-active", l === el));
+      movePill(el);
+    };
     dockLinks.forEach((l) => l.addEventListener("click", tap));
+    const onResize = () => movePill(document.querySelector(".dock-link.is-active"));
+    addEventListener("resize", onResize);
 
     return () => {
       removeEventListener("scroll", handler);
+      removeEventListener("resize", onResize);
       dockLinks.forEach((l) => l.removeEventListener("click", tap));
       io.disconnect();
     };
