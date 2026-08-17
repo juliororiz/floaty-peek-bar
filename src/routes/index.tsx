@@ -63,12 +63,18 @@ function Index() {
 
     let lastY = window.scrollY;
 
+    let pillTimer: ReturnType<typeof setTimeout> | undefined;
     const movePill = (el: Element | null) => {
       if (!pill || !(el instanceof HTMLElement) || !dock) return;
       if (!el.offsetParent) return;
-      pill.style.width = `${el.offsetWidth}px`;
-      pill.style.transform = `translateX(${el.offsetLeft}px)`;
-      pill.style.opacity = "1";
+      const apply = () => {
+        pill.style.width = `${el.offsetWidth}px`;
+        pill.style.transform = `translateX(${el.offsetLeft}px)`;
+        pill.style.opacity = "1";
+      };
+      apply();
+      clearTimeout(pillTimer);
+      pillTimer = setTimeout(apply, 520);
     };
 
     const onScroll = () => {
