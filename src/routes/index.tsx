@@ -82,7 +82,7 @@ function Index() {
         if (sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.35) activeIndex = i;
       });
       dockLinks.forEach((l, i) => l.classList.toggle("is-active", i === activeIndex));
-      movePill(dockLinks[activeIndex]);
+      movePill(dockLinks[activeIndex] ?? null);
 
       heroImg?.style.setProperty("--heroY", `${clamp(y * 0.1, 0, 55)}px`);
       courseImgs.forEach((img) => {
