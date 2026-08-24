@@ -41,9 +41,11 @@ export function CoursePage({ course }: { course: Course }) {
           </div>
         </header>
 
-        <section className="block reveal">
-          <p className="lead">{course.intro}</p>
-        </section>
+        {restIntro && (
+          <section className="block reveal">
+            <p className="lead">{restIntro}</p>
+          </section>
+        )}
 
         {course.highlights && (
           <section className="block reveal">
