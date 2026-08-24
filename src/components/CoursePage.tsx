@@ -7,6 +7,7 @@ export function CoursePage({ course }: { course: Course }) {
   useReveal();
   const msg = `Olá Jhemilly, quero informações sobre a formação ${course.short}.`;
   const [firstSentence] = course.intro.split(/(?<=\.)\s/);
+  const restIntro = course.intro.slice(firstSentence.length).trim();
 
   return (
     <main className="jv">
