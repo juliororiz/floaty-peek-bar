@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FioAFioRouteImport } from './routes/fio-a-fio'
+import { Route as M7RouteImport } from './routes/m7'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const FioAFioRoute = FioAFioRouteImport.update({
   path: '/fio-a-fio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const M7Route = M7RouteImport.update({
+  id: '/m7',
+  path: '/m7',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/fio-a-fio': typeof FioAFioRoute
+  '/m7': typeof M7Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/fio-a-fio': typeof FioAFioRoute
+  '/m7': typeof M7Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/fio-a-fio': typeof FioAFioRoute
+  '/m7': typeof M7Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fio-a-fio'
+  fullPaths: '/' | '/fio-a-fio' | '/m7'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fio-a-fio'
-  id: '__root__' | '/' | '/fio-a-fio'
+  to: '/' | '/fio-a-fio' | '/m7'
+  id: '__root__' | '/' | '/fio-a-fio' | '/m7'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FioAFioRoute: typeof FioAFioRoute
+  M7Route: typeof M7Route
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FioAFioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/m7': {
+      id: '/m7'
+      path: '/m7'
+      fullPath: '/m7'
+      preLoaderRoute: typeof M7RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FioAFioRoute: FioAFioRoute,
+  M7Route: M7Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
