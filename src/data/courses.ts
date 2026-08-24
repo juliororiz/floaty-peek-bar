@@ -39,7 +39,7 @@ export const courses: Course[] = [
     price: "690€",
     priceNote: "Aos valores acresce IVA à taxa legal em vigor, quando aplicável.",
     deposit: "100€",
-    cover: "/images/fio-cover.jpg",
+    cover: "/images/fio-3.jpg",
     cardImage: "/images/fio-1.jpg",
     facts: ["2 dias · 16h", "10h às 18h", "Amadora", "Kit aluno incluído"],
     intro:
@@ -132,7 +132,7 @@ export const courses: Course[] = [
     title: "M7",
     titleEm: "Método Sete Pilares",
     short: "M7 · Método Sete Pilares",
-    level: "3 dias · Técnica, marketing e posicionamento",
+    level: "3 dias · Técnica & posicionamento",
     price: "750€",
     priceNote: "Os valores não incluem IVA. Cartão ou Klarna incluem taxa de 6%.",
     deposit: "100€",
@@ -223,7 +223,7 @@ export const courses: Course[] = [
     price: "1.290€",
     priceNote: "Aos valores acresce IVA à taxa legal em vigor, quando aplicável.",
     deposit: "150€",
-    cover: "/images/bloom-cover.jpg",
+    cover: "/images/bloom-aula.jpg",
     cardImage: "/images/bloom-tec-1.jpg",
     facts: ["3 dias", "3 técnicas", "2 modelos práticos", "Dermógrafo incluído"],
     intro:
