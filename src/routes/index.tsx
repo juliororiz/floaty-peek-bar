@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { courses, waLink } from "../data/courses";
-import { ArrowIcon, Backdrop, WaIcon, WhatsAppFab, useReveal } from "../components/site";
+import { Backdrop, WaIcon, WhatsAppFab, useReveal } from "../components/site";
 import "../content/site.css";
 
 export const Route = createFileRoute("/")({
@@ -68,7 +68,7 @@ function Home() {
               </div>
               <div className="cc-go">
                 <span>Ver a formação completa</span>
-                <ArrowIcon />
+                <em>Detalhes</em>
               </div>
             </Link>
           ))}
@@ -99,7 +99,7 @@ function Home() {
               <b>WhatsApp</b>
               <small>Falar direto com a Jhemilly</small>
             </span>
-            <span className="arrow" aria-hidden="true">↗</span>
+            <span className="arrow" aria-hidden="true">Abrir</span>
           </a>
           <a className="row" href="https://www.instagram.com/jhemillyvieira/" target="_blank" rel="noopener">
             <span className="ico">
@@ -111,7 +111,7 @@ function Home() {
               <b>Instagram</b>
               <small>@jhemillyvieira</small>
             </span>
-            <span className="arrow" aria-hidden="true">↗</span>
+            <span className="arrow" aria-hidden="true">Abrir</span>
           </a>
           <a className="row" href="https://maps.google.com/?q=Praceta+Not%C3%ADcias+da+Amadora+5B+Amadora" target="_blank" rel="noopener">
             <span className="ico">
@@ -123,7 +123,7 @@ function Home() {
               <b>Academia</b>
               <small>Praceta Notícias da Amadora 5B, Amadora</small>
             </span>
-            <span className="arrow" aria-hidden="true">↗</span>
+            <span className="arrow" aria-hidden="true">Abrir</span>
           </a>
           <a className="row" href="tel:+351938434595">
             <span className="ico">
@@ -135,7 +135,7 @@ function Home() {
               <b>+351 938 434 595</b>
               <small>Ligar agora</small>
             </span>
-            <span className="arrow" aria-hidden="true">↗</span>
+            <span className="arrow" aria-hidden="true">Abrir</span>
           </a>
         </section>
 
