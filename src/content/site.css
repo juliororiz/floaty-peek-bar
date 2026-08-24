@@ -157,7 +157,7 @@ img{max-width:100%;display:block}
 .rules li{font-size:12.4px;line-height:1.6;color:var(--muted)}
 
 /* ---------- whatsapp fab ---------- */
-.wa-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0b0b0c;background:var(--cream);box-shadow:0 18px 40px -18px rgba(0,0,0,.9);transition:transform .16s ease,filter .2s ease}
+.wa-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;text-decoration:none;white-space:nowrap;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0b0b0c;background:var(--cream);box-shadow:0 18px 40px -18px rgba(0,0,0,.9);transition:transform .16s ease,filter .2s ease}
 .wa-fab svg{width:18px;height:18px}
 .wa-fab:active{transform:translateX(-50%) scale(.975);filter:brightness(.94)}
 
