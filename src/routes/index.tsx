@@ -68,7 +68,7 @@ function Home() {
               </div>
               <div className="cc-go">
                 <span>Ver a formação completa</span>
-                <ArrowIcon />
+                <em>Detalhes</em>
               </div>
             </Link>
           ))}
