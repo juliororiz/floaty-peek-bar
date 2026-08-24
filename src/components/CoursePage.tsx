@@ -12,16 +12,18 @@ export function CoursePage({ course }: { course: Course }) {
   return (
     <main className="jv">
       <Backdrop />
-      <div className="shell">
-        <div className="topbar">
+      <div className="topbar">
+        <div className="topbar-in">
           <Link to="/" className="back">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M15 6l-6 6 6 6" />
-            </svg>
             Voltar
           </Link>
           <img src="/images/jv-monogram.png" alt="Jhemilly Vieira Beauty" />
         </div>
+      </div>
+
+      <div className="shell">
+        <div className="topbar-space" />
+
 
         <header className="cover reveal">
           <img src={course.cover} alt={`Formação ${course.short}`} />
