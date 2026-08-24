@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BloomLipsRouteImport } from './routes/bloom-lips'
 import { Route as FioAFioRouteImport } from './routes/fio-a-fio'
 import { Route as M7RouteImport } from './routes/m7'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BloomLipsRoute = BloomLipsRouteImport.update({
+  id: '/bloom-lips',
+  path: '/bloom-lips',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FioAFioRoute = FioAFioRouteImport.update({
@@ -31,30 +37,34 @@ const M7Route = M7RouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bloom-lips': typeof BloomLipsRoute
   '/fio-a-fio': typeof FioAFioRoute
   '/m7': typeof M7Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bloom-lips': typeof BloomLipsRoute
   '/fio-a-fio': typeof FioAFioRoute
   '/m7': typeof M7Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bloom-lips': typeof BloomLipsRoute
   '/fio-a-fio': typeof FioAFioRoute
   '/m7': typeof M7Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fio-a-fio' | '/m7'
+  fullPaths: '/' | '/bloom-lips' | '/fio-a-fio' | '/m7'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fio-a-fio' | '/m7'
-  id: '__root__' | '/' | '/fio-a-fio' | '/m7'
+  to: '/' | '/bloom-lips' | '/fio-a-fio' | '/m7'
+  id: '__root__' | '/' | '/bloom-lips' | '/fio-a-fio' | '/m7'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BloomLipsRoute: typeof BloomLipsRoute
   FioAFioRoute: typeof FioAFioRoute
   M7Route: typeof M7Route
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bloom-lips': {
+      id: '/bloom-lips'
+      path: '/bloom-lips'
+      fullPath: '/bloom-lips'
+      preLoaderRoute: typeof BloomLipsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fio-a-fio': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BloomLipsRoute: BloomLipsRoute,
   FioAFioRoute: FioAFioRoute,
   M7Route: M7Route,
 }

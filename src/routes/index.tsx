@@ -51,7 +51,7 @@ function Home() {
             Formações
           </h2>
           {courses.map((c) => (
-            <Link key={c.slug} to={`/${c.slug}`} className="course-card">
+            <Link key={c.slug} to={`/${c.slug}` as "/fio-a-fio"} className="course-card">
               <div className="cc-media">
                 <span className="cc-badge">{c.badge}</span>
                 <img src={c.cardImage} alt={c.short} loading="lazy" />
