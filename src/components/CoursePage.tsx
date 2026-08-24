@@ -31,7 +31,7 @@ export function CoursePage({ course }: { course: Course }) {
               {course.title}
               <em>{course.titleEm}</em>
             </h1>
-            <p>{course.intro}</p>
+            <p>{firstSentence}</p>
             <div className="cover-facts">
               {course.facts.map((f) => (
                 <span key={f}>{f}</span>
@@ -39,6 +39,10 @@ export function CoursePage({ course }: { course: Course }) {
             </div>
           </div>
         </header>
+
+        <section className="block reveal">
+          <p className="lead">{course.intro}</p>
+        </section>
 
         {course.highlights && (
           <section className="block reveal">
