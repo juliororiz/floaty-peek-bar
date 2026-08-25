@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Floating Menu Magic
+
+Quero que atue como especialista em desenvolvimento de software e deixe esse site perfeito! Quero que o menu não desapareça em mobile, mas que fique como se fosse uma bottom bar, no alto, o botão em baixo, deve ser um botão, tipo um bottom bar, flutuante, com um efeito de botão afundado do WhatsApp, capriche no visual
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://floaty-peek-bar.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/07086c91-0acb-44c6-bcca-280261182e4a).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
